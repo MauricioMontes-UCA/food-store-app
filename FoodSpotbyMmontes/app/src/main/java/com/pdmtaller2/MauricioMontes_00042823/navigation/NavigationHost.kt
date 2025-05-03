@@ -39,7 +39,7 @@ fun NavigationHost(scaffoldPaddingValues: PaddingValues) {
             )
         }
         composable<_RestaurantScreen> {
-                backStackEntry -> val args = backStackEntry.toRoute<_RestaurantScreen>()
+            backStackEntry -> val args = backStackEntry.toRoute<_RestaurantScreen>()
             val restaurant = restaurants.find { it.id == args.id }
 
             if (restaurant != null){

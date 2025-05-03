@@ -66,7 +66,7 @@ fun VariantRestaurantCard(
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = restaurant.name,
+                    text = restaurant.description,
                     style = typography.labelSmall,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis

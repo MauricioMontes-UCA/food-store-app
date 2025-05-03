@@ -49,10 +49,9 @@ fun BrowseScreen(
     var query by remember { mutableStateOf("") }
 
     val filteredItems = restaurants.filter { restaurant ->
-        restaurant.name.contains(query, ignoreCase = true) ||
-        restaurant.menu.any { dish ->
-            dish.name.contains(query, ignoreCase = true)
-        }
+        restaurant.name.contains(query, ignoreCase = true)
+                || restaurant.categories.any { category -> category.contains(query, ignoreCase = true) }
+                || restaurant.menu.any { dish -> dish.name.contains(query, ignoreCase = true) }
     }.ifEmpty {
         restaurants.filter { restaurant ->
             restaurant.categories.any { category ->
